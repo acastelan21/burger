@@ -8,11 +8,13 @@
                 <br>
                 {{this.id}}
                 {{this.burger_name}}
-                <form action="api/burgers/{{this.id}}" method="PUT">
-                 <input type="hidden" name="devoured" value="1">
+                
+                <form action="/burgers/update/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
                  <button type="submit">Eat!</button>
-        </form>
-            
+                 
+                 </form>
+           
         {{/unless}}
     {{/each}}
 
@@ -32,7 +34,7 @@
 
 <h2> Add a burger</h2>
 
-<form action="api/burgers/" method="POST">
+<form action="burgers/create" method="POST">
 
   <div class="form-group">
     <label>Burger Name:</label>
