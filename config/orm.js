@@ -1,4 +1,4 @@
-var connection = require("./connection.js");
+var connection = require("../config/connection.js");
 
 // Object Relational Mapper (ORM)
 
@@ -45,14 +45,14 @@ function printQuestionMarks(num) {
   }
   
 var orm = {
-  selectAll: function(tableInput, cb) {
+  all: function(tableInput, cb) {
     var queryString = "SELECT * FROM ??" ;
     connection.query(queryString, [tableInput], function(err, result) {
       if (err) throw err;
       cb(result);
     });
   },
-  insertOne: function(table, cols,vals,cb) {
+  create: function(table, cols,vals,cb) {
       var queryString = "INSERT INTO " + table;
       queryString += " (";
       queryString += cols.toString();
@@ -69,7 +69,7 @@ var orm = {
     });
     
   },
-  updateOne: function(table, objColVals, condition, cb) {
+  update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
