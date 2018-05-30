@@ -1,0 +1,51 @@
+body {
+    background-color: hsla(44, 100%, 50%, 0.937) ;
+   
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+
+}
+#header {
+    text-align: center;
+    
+    
+}
+h3{
+    text-align: center;
+}
+
+#addBurgerBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+input {
+    height:50px;
+    width:200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+
+li {
+    list-style-type: none; 
+    background-color: lightgoldenrodyellow;
+    margin-top: 10px;
+    padding:10px;
+    width:100%
+}
+
+#ate{
+    color:gray;
+}
+
+.devourBurger {
+    position: absolute;
+    right:24px;
+}
