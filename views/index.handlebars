@@ -2,19 +2,19 @@
 
 <div class="row">
     <div class="col">
-        <ul class="canEat">
+        <ul>
             <h3>Burgers available to eat!</h3>
+            {{#each burgers}} {{#unless this.devoured}}
+            <br> {{this.id}} {{this.burger_name}}
 
             <form action="/burgers/update/{{this.id}}?_method=PUT" method="POST">
-                {{#each burgers}} {{#unless this.devoured}}
-                <li> {{this.id}} {{this.burger_name}}
-                    <input type="hidden" name="devoured" value="true">
-                    <button class="devourBurger" type="submit">Devour It!</button>
+                <input type="hidden" name="devoured" value="true">
+                <button class="devourBurger" type="submit">Devour It!</button>
 
             </form>
 
             {{/unless}} {{/each}}
-            </li>
+
         </ul>
     </div>
     <div class="col">
@@ -35,9 +35,7 @@
         <ul>
             <h3>Burgers ate!</h3>
             {{#each burgers}} {{#if devoured}}
-            <br>
-            <li id="ate">{{this.id}} {{burger_name}} {{/if}} {{/each}}
-            </li>
+            <br> {{this.id}} {{burger_name}} {{/if}} {{/each}}
         </ul>
     </div>
 </div>
