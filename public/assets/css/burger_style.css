@@ -45,9 +45,14 @@ li {
 
 #ate{
     color:gray;
+    width:95%;
 }
 
 .devourBurger {
     position: absolute;
     right:24px;
+}
+.form-inline{
+    margin-top:10px;
+    float:left;
 }
