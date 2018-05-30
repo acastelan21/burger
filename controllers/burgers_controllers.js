@@ -24,7 +24,7 @@ router.post("/burgers/create", function(req, res){
         req.body.burger_name, req.body.devoured
     ], function(data){
     
-        res.redirect("/burgers");
+        res.redirect("/");
         console.log("working2")
 
     });
@@ -35,7 +35,7 @@ router.put("/burgers/update/:id", function(req, res) {
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
    burger.update({devoured: req.body.devoured}, condition, function(data) {
-           res.redirect("/burgers");
+           res.redirect("/");
         //console.log("working4");
     });
 });
